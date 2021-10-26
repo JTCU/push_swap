@@ -1,15 +1,15 @@
 #include "push_swap.h"
 
-void ft_evaluate (int *a_arr, int *b_arr, int la, int lb, int argc)
+void ft_evaluate (int *a_arr, int *b_arr, int *lx, int argc)
 {
-	ft_r(a_arr, argc, 1);
-	ft_print_arr(a_arr, b_arr, argc);
-	ft_r(b_arr, argc, 2);
+	ft_p(a_arr, b_arr, lx, argc, 2);
+	ft_p(a_arr, b_arr, lx, argc, 2);
 	ft_print_arr(a_arr, b_arr, argc);
 
-	ft_s(a_arr, 1);
+	ft_r(a_arr, lx, argc, 1);
 	ft_print_arr(a_arr, b_arr, argc);
-	ft_s(b_arr, 2);
+
+	ft_r(b_arr, lx, argc, 2);
 	ft_print_arr(a_arr, b_arr, argc);
 }
 
@@ -17,11 +17,10 @@ int main (int argc, char **argv)
 {
 	int *a_arr;
 	int *b_arr;
-	int la;
-	int lb;
+	int lx[2];
 
-	la = argc;
-	lb = 0;
+	lx[0] = argc - 1;
+	lx[1] = 0;
 	if (argc >= 3)
 	{
 		printf("-------------------------------------------------------------------------------------------------------------------------------\n");
@@ -31,7 +30,7 @@ int main (int argc, char **argv)
 			return (0);
 		ft_init_arr(a_arr, b_arr, argc, argv);
 		ft_print_arr(a_arr, b_arr, argc);
-		ft_evaluate(a_arr, b_arr, la, lb, argc);
+		ft_evaluate(a_arr, b_arr, lx, argc);
 		ft_free(a_arr, b_arr);
 		return (1);
 	}
