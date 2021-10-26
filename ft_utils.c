@@ -15,11 +15,6 @@ void ft_putstr(char *str)
 	return ;
 }
 
-void ft_error(void)
-{
-	ft_putstr("Error\n");
-}
-
 /*int ft_check_input(int argc, char *argv)
 {
 	return (1);

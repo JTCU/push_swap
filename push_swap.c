@@ -22,6 +22,6 @@ int main (int argc, char **argv)
 		ft_free(a_arr, b_arr);
 		return (1);
 	}
-	ft_error();
+	ft_putstr("Error\n");
 	return (0);
 }
