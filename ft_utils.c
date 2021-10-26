@@ -37,7 +37,7 @@ void ft_init_arr(int *a_arr, int *b_arr, int argc, char **argv)
 void ft_print_arr (int *a_arr, int *b_arr, int argc)
 {
 	int i;
-
+	
 	i = 0;
 	while (i < argc - 1)
 	{
@@ -45,6 +45,7 @@ void ft_print_arr (int *a_arr, int *b_arr, int argc)
 		i++;
 	}
 	printf("_	_\na	b\n");
+	printf("-------------------------------------------------------------------------------------------------------------------------------\n");
 }
 
 void ft_get_arr(int argc, char **argv, int *arr)

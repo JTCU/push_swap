@@ -13,5 +13,7 @@ void ft_free(int *a_arr, int *b_arr);
 int	ft_atoi(char *nptr);
 int ft_check_input(int argc, char *argv);
 void ft_get_arr(int argc, char **argv, int *arr);
+void ft_r(int *arr, int argc, int opt);
+void ft_s(int *arr, int opt);
 
 #endif
