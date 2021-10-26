@@ -1,5 +1,23 @@
 #include "push_swap.h"
 
+void ft_s(int *arr, int opt)
+{
+	int temp;
+
+	if (opt == 1)
+		printf("Exec sa:\n");
+	if (opt == 2)
+		printf("Exec sb:\n");
+	if (arr[1])
+	{
+		temp = arr[0];
+		arr[0] = arr[1];
+		arr[1] = temp;
+	}
+	else
+		printf("Error\n");
+}
+
 void ft_r(int *arr, int argc, int opt)
 {
 	int i;
@@ -17,22 +35,4 @@ void ft_r(int *arr, int argc, int opt)
 		i++;
 	}
 	arr[i] = temp;
-}
-
-void ft_s(int *arr, int opt)
-{
-	int temp;
-
-	if (opt == 1)
-		printf("Exec sa:\n");
-	if (opt == 2)
-		printf("Exec sb:\n");
-	if (arr[1])
-	{
-		temp = arr[0];
-		arr[0] = arr[1];
-		arr[1] = temp;
-	}
-	else
-		printf("Error\n");
 }
