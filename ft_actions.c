@@ -6,9 +6,9 @@ void ft_s(int *arr, int *lx, int argc, int opt)
 	int temp;
 
 	if (opt == 1)
-		printf("Exec sa:\n");
+		printf("sa\n");
 	if (opt == 2)
-		printf("Exec sb:\n");
+		printf("sb\n");
 	l = lx[opt - 1];
 	if (arr[argc -l])
 	{
@@ -26,7 +26,7 @@ void ft_p(int *a_arr, int *b_arr, int *lx, int argc, int opt)
 		return;
 	if (opt == 1)
 	{
-		printf("Exec pa:\n");
+		printf("pa\n");
 		a_arr[argc - lx[0] - 2] = b_arr[argc - lx[1] - 1];
 		b_arr[argc - lx[1] - 1] = 0;
 		lx[0]++;
@@ -34,7 +34,7 @@ void ft_p(int *a_arr, int *b_arr, int *lx, int argc, int opt)
 	}
 	if (opt == 2)
 	{
-		printf("Exec pb:\n");
+		printf("pb\n");
 		b_arr[argc - lx[1] - 2] = a_arr[argc - lx[0] - 1];
 		a_arr[argc - lx[0] - 1] = 0;
 		lx[0]--;
@@ -45,15 +45,13 @@ void ft_p(int *a_arr, int *b_arr, int *lx, int argc, int opt)
 void ft_r(int *arr, int *lx, int argc, int opt)
 {
 	int i;
-	int l;
 	int temp;
 
 	if (opt == 1)
-		printf("Exec ra:\n");
+		printf("ra\n");
 	if (opt == 2)
-		printf("Exec rb:\n");
-	l = lx[opt - 1];
-	i = argc - 1 - l;
+		printf("rb\n");
+	i = argc - 1 - lx[opt - 1];
 	temp = arr[i];
 	while (i < argc - 2)
 	{
@@ -63,18 +61,18 @@ void ft_r(int *arr, int *lx, int argc, int opt)
 	arr[i] = temp;
 }
 
-void ft_rr(int *arr, int argc, int opt)
+void ft_rr(int *arr, int *lx, int argc, int opt)
 {
 	int i;
 	int temp;
 
 	if (opt == 1)
-		printf("Exec rra:\n");
+		printf("rra\n");
 	if (opt == 2)
-		printf("Exec rrb:\n");
+		printf("rrb\n");
 	i = argc - 2;
 	temp = arr[i];
-	while (i > 0)
+	while (i > argc - 1 - lx[opt - 1])
 	{
 		arr[i] = arr[i - 1];
 		i--;

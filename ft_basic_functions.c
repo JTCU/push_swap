@@ -1,4 +1,18 @@
 #include "push_swap.h"
+#include <unistd.h>
+
+void ft_putstr(char *str)
+{
+	int i;
+
+	i = 0;
+	while (str[i])
+	{
+		write (1, &str[i], 1);
+		i++;
+	}
+	return ;
+}
 
 int	ft_atoi(char *nptr)
 {
@@ -33,3 +47,8 @@ void ft_free(int *a_arr, int *b_arr)
 	free(a_arr);
 	free(b_arr);
 }
+
+/*int ft_check_input(int argc, char *argv)
+{
+	return (1);
+}*/

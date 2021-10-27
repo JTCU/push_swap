@@ -1,24 +1,4 @@
 #include "push_swap.h"
-#include <unistd.h>
-
-
-void ft_putstr(char *str)
-{
-	int i;
-
-	i = 0;
-	while (str[i])
-	{
-		write (1, &str[i], 1);
-		i++;
-	}
-	return ;
-}
-
-/*int ft_check_input(int argc, char *argv)
-{
-	return (1);
-}*/
 
 void ft_init_arr(int *a_arr, int *b_arr, int argc, char **argv)
 {
@@ -34,7 +14,8 @@ void ft_init_arr(int *a_arr, int *b_arr, int argc, char **argv)
 	return ;
 }
 
-void ft_print_arr (int *a_arr, int *b_arr, int argc)
+//RECORDAR QUITAR FUNCIÓN
+/*void ft_print_arr (int *a_arr, int *b_arr, int argc)
 {
 	int i;
 	
@@ -46,7 +27,7 @@ void ft_print_arr (int *a_arr, int *b_arr, int argc)
 	}
 	printf("_	_\na	b\n");
 	printf("-------------------------------------------------------------------------------------------------------------------------------\n");
-}
+}*/
 
 void ft_get_arr(int argc, char **argv, int *arr)
 {
@@ -58,4 +39,39 @@ void ft_get_arr(int argc, char **argv, int *arr)
 		arr[i - 1] = ft_atoi(argv[i]);
 		i++;
 	}
+}
+
+int ft_get_minpos(int *arr, int l, int argc)
+{
+	int i;
+	int val;
+	int pos;
+
+	i = argc - l;
+	val = arr[i - 1];
+	pos = 0;
+	while (i < argc - 1)
+	{
+		if (arr[i] < val)
+		{
+			val = arr[i];
+			pos = i;
+		}
+		i++;
+	}
+	return (pos);
+}
+
+int ft_check_order (int *arr, int l, int argc)
+{
+	int i;
+
+	i = argc - 1 - l;
+	while (i + 1 < argc - 1)
+	{
+		if (arr[i] > arr[i + 1])
+			return (0);
+		i++;
+	}
+	return (1);
 }
